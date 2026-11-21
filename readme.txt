@@ -32,8 +32,8 @@ The payment page offers only the coins you have set a wallet for in the Orboni d
 
 **Built for real orders**
 
-* Underpaid, overpaid, late and reversed payments are written on the order as notes, and the order is put On Hold for you instead of giving access by mistake.
-* A buyer who comes back and presses Purchase again gets the same payment page, never a second charge for the same order; an order left unpaid can be taken up again.
+* Underpaid and reversed payments, and payments held for your review, put the order On Hold with a note, so no access is given by mistake. An overpaid order is completed, and its note says how much arrived.
+* A buyer who comes back and presses Purchase again gets the same payment page while it has more than five minutes left, and a fresh one after that; an order left unpaid can be taken up again.
 * Test keys let you try the whole flow before you take real payments.
 
 Your store can sell in US dollars, euros, pounds, Swiss francs, złoty, Czech koruna, forints, lei, Danish, Swedish and Norwegian kroner, Icelandic krónur, lira, yen, won, yuan, Hong Kong and Singapore dollars, rupees, rupiah, ringgit, pesos (Philippine and Mexican), baht, shekels, Australian, New Zealand and Canadian dollars, reais, rand, hryvnias, Argentine and Chilean pesos, dirhams, riyals, Taiwan dollars and đồng. Orboni turns the price into dollars at the rate of the day (the European Central Bank's, or the market's for a currency the ECB does not publish), and the buyer pays that in the coin they pick. A payment is worth at least $1.
@@ -59,7 +59,7 @@ Orboni takes 37 currencies, listed above: the payment page shows the order's tot
 
 = What happens if a buyer sends too little or too much? =
 
-Too little: the payment page asks for the rest, and the order is On Hold with a note. If the page expires part paid, the order stays On Hold for you to settle with the buyer. Too much: the order is completed, and a note says how much arrived in all; refunds are sent from your own wallet.
+Too little: the payment page asks for the rest, and the order is On Hold with a note. If the page expires part paid, the order stays On Hold for you to settle with the buyer. Too much: the order is completed, and a note says how much arrived in all; send the difference back from your own wallet. Only a payment far above the total (over twice it, and over $50 more) to a Bitcoin-style address is held for your review in the Orboni dashboard first, since it may be someone else's payment; the order stays On Hold until you accept it there.
 
 = How do refunds work? =
 
