@@ -4,7 +4,7 @@
  * Plugin Name:       Orboni for Easy Digital Downloads
  * Plugin URI:        https://orboni.com/docs/easy-digital-downloads
  * Description:       Accept crypto payments — USDT, USDC, BTC, ETH and more — straight to your own wallets. Orboni never holds your money.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Requires Plugins:  easy-digital-downloads
@@ -16,7 +16,7 @@
  */
 defined('ABSPATH') || exit;
 
-define('ORBONI_EDD_VERSION', '1.0.0');
+define('ORBONI_EDD_VERSION', '1.0.1');
 define('ORBONI_EDD_FILE', __FILE__);
 define('ORBONI_EDD_DIR', plugin_dir_path(__FILE__));
 
@@ -46,10 +46,11 @@ function orboni_edd_init()
     Orboni_EDD_Order_Sync::register();
 }
 
-/** Shown to whoever can activate plugins, while Easy Digital Downloads is missing or older than 3.1. */
+/** Shown on the Plugins screen only, to whoever can activate plugins, while Easy Digital Downloads is older than 3.1. */
 function orboni_edd_missing_notice()
 {
-    if (! current_user_can('activate_plugins')) {
+    $screen = function_exists('get_current_screen') ? get_current_screen() : null;
+    if (! $screen || $screen->id !== 'plugins' || ! current_user_can('activate_plugins')) {
         return;
     }
 
